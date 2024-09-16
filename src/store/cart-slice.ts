@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 type CartIrem = {
 	id: string;
@@ -18,7 +18,10 @@ export const cartSlice = createSlice({
 	name: "cart",
 	initialState,
 	reducers: {
-		addToCart() {},
+		addToCart(
+			state,
+			action: PayloadAction<{ id: string; title: string; price: number }>
+		) {},
 		removeFromCart() {},
 	},
 });
